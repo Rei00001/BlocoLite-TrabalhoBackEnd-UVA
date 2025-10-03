@@ -37,7 +37,7 @@ if (!loginForm) {
             username: data.username
         }));
 
-        window.location.href = 'notas.html';
+        window.location.href = '../notas.html';
 
       } else {
         showMessage(data.error || 'Ocorreu um erro ao tentar fazer login.');
