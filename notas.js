@@ -1,3 +1,7 @@
+const BASE_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:3000' 
+  : 'https://blocolite-trabalhobackend-uva.onrender.com';
+
 window.addEventListener('DOMContentLoaded', () => {
 
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -24,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     async function fetchAndDisplayNotes() {
         try {
-            const response = await fetch(`http://localhost:3000/notes/${currentUser.userId}`);
+            const response = await fetch(`${BASE_URL}/notes/${currentUser.userId}`);
             if (!response.ok) {
                 throw new Error('Falha ao buscar notas.');
             }
@@ -85,13 +89,13 @@ window.addEventListener('DOMContentLoaded', () => {
         try {
             let response;
             if (currentEditingNoteId) {
-                response = await fetch(`http://localhost:3000/notes/${currentEditingNoteId}`, {
+                response = await fetch(`${BASE_URL}/notes/${currentEditingNoteId}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(noteData),
                 });
             } else {
-                response = await fetch('http://localhost:3000/notes', {
+                response = await fetch(`${BASE_URL}/notes`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(noteData),
