@@ -1,17 +1,14 @@
-// --- 1. IMPORTAÇÕES ---
 const express = require('express');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-// --- 2. CONFIGURAÇÃO INICIAL ---
 const app = express();
 const PORT = 3000;
 app.use(express.json());
 app.use(cors());
 
-// --- 3. CONEXÃO COM O BANCO DE DADOS ---
 const db = new sqlite3.Database('./database.db', (err) => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados:', err.message);
@@ -20,9 +17,6 @@ const db = new sqlite3.Database('./database.db', (err) => {
     }
 });
 
-// --- 4. ROTAS DE AUTENTICAÇÃO ---
-
-// ROTA DE CADASTRO (POST /register)
 app.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
 
@@ -51,7 +45,6 @@ app.post('/register', async (req, res) => {
     }
 });
 
-// ROTA DE LOGIN (POST /login) - Aceita username ou email
 app.post('/login', (req, res) => {
     const { login, password } = req.body;
 
@@ -86,9 +79,6 @@ app.post('/login', (req, res) => {
     });
 });
 
-// --- 5. ROTAS DAS NOTAS (CRUD) ---
-
-// BUSCAR TODAS AS NOTAS DE UM USUÁRIO (GET)
 app.get('/notes/:userId', (req, res) => {
     const userId = req.params.userId;
     const sql = "SELECT * FROM notes WHERE user_id = ? ORDER BY created_at DESC";
@@ -101,7 +91,6 @@ app.get('/notes/:userId', (req, res) => {
     });
 });
 
-// CRIAR UMA NOVA NOTA (POST)
 app.post('/notes', (req, res) => {
     const { title, content, userId } = req.body;
 
@@ -121,7 +110,6 @@ app.post('/notes', (req, res) => {
     });
 });
 
-// DELETAR UMA NOTA (DELETE)
 app.delete('/notes/:id', (req, res) => {
     const noteId = req.params.id;
     const sql = 'DELETE FROM notes WHERE id = ?';
@@ -137,7 +125,6 @@ app.delete('/notes/:id', (req, res) => {
     });
 });
 
-// ATUALIZAR UMA NOTA (PUT)
 app.put('/notes/:id', (req, res) => {
     const noteId = req.params.id;
     const { title, content } = req.body;
@@ -155,7 +142,6 @@ app.put('/notes/:id', (req, res) => {
     });
 });
 
-// --- 6. ROTA DE TESTE E INICIALIZAÇÃO DO SERVIDOR ---
 app.get('/', (req, res) => {
     res.send('API do Bloco de Notas funcionando!');
 });
