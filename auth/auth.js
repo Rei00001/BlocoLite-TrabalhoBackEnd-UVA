@@ -1,3 +1,7 @@
+const BASE_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:3000'
+  : 'https://blocolite-trabalhobackend-uva.onrender.com';
+
 const registerForm = document.getElementById('register-form');
 
 function showMessage(text) {
@@ -39,7 +43,7 @@ if (!registerForm) {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/register', {
+      const response = await fetch(`${BASE_URL}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

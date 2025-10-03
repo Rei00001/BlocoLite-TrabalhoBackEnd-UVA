@@ -1,3 +1,7 @@
+const BASE_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:3000'
+  : 'https://blocolite-trabalhobackend-uva.onrender.com';
+
 const loginForm = document.getElementById('login-form');
 
 function showMessage(text) {
@@ -20,7 +24,7 @@ if (!loginForm) {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch(`${BASE_URL}/login`, {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json', 
@@ -36,7 +40,7 @@ if (!loginForm) {
             userId: data.userId,
             username: data.username
         }));
-        
+
         window.location.href = '../notas.html';
 
       } else {
