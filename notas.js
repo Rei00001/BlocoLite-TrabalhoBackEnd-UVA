@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/notes/${noteId}`, {
+            const response = await fetch(`${BASE_URL}/notes/${noteId}`, {
                 method: 'DELETE',
             });
 
