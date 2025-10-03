@@ -140,15 +140,10 @@ window.addEventListener('DOMContentLoaded', () => {
     function handleEdit(note) {
         titleInput.value = note.title;
         contentInput.value = note.content;
-<<<<<<< HEAD
         
-        // Guarda o ID da nota que está sendo editada
         currentEditingNoteId = note.id;
         
-        // Muda o texto do botão para indicar que estamos atualizando
         saveButton.innerHTML = 'Atualizar Nota <span class="button-icon"><img src="img/ok.png" alt="ok"></span>';
-=======
->>>>>>> 650605863699055c02b3b11407637c1dc170a46f
 
         currentEditingNoteId = note.id;
 

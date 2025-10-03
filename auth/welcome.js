@@ -36,11 +36,7 @@ if (!loginForm) {
             userId: data.userId,
             username: data.username
         }));
-
-<<<<<<< HEAD
-        // Redireciona para a página de notas
-=======
->>>>>>> 650605863699055c02b3b11407637c1dc170a46f
+        
         window.location.href = '../notas.html';
 
       } else {
