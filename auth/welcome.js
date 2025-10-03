@@ -49,7 +49,7 @@ if (!loginForm) {
         }));
 
         // Redireciona para a página de notas
-        window.location.href = '/notas.html';
+        window.location.href = '../notas.html';
 
       } else {
         // FALHA! A API retornou um erro (ex: 401 Credenciais inválidas)
