@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco de Notas</title>
+    <link rel="stylesheet" href="/auth/auth.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <h1>BlocoLite</h1>
+            <p>Simples, pratico e necessario</p>
+                <form id="login-form" action="/login" method="POST" class="form">
+                    <h2 class="form-title">Login</h2>
+                    <div class="input-group">
+                        <label for="usuario"><img src="/img/user2.svg" alt="user2"></label>
+                        <input type="text" id="usuario" name="usuario" required placeholder="Digite seu usuario ou email">
+                    </div>
+                    <div class="input-group">
+                        <label for="senha"><img src="/img/lock.svg" alt="key"></label>
+                        <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
+                    </div>
+                    <button type="submit" class="submit-button">Entrar</button>
+                    <p>Já tem conta ? <a href="index.html">Registre-se</a></p>
+                </form>
+        </div>
+    </main>
+    <script src="/auth/welcome.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco de Notas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="border">
+      <header>
+       <img src="/img/logo.png" alt="logo" class="logoimg"> 
+       <button class="secondary button"><a href="login.html">Sair <span class="button-icon"><img src="/img/logout.png" alt="logout"></span></a></button>
+    </header>
+    <main>
+        <div class="title">
+        <h1>BlocoLite</h1>
+        <p>Um lugar seguro para suas ideias… até você fechar sem salvar.</p>
+        </div>
+        <div class="main-container">
+        <section class="title-block">
+            <div class="title-container">
+                <textarea name="title" id="title-block" placeholder="Meu titulo será..."></textarea>
+            </div>
+        </section>
+
+        <section class="text-block">
+            <div class="text-container">
+                <textarea name="text" id="text-block" placeholder="Anote seu texto aqui antes que fuja da cabeça."></textarea>
+            </div>
+        </section>
+        </div>
+        <section class="button-saved">
+            <button class="primary button">Salvar <span class="button-icon"><img src="/img/ok.png" alt="ok"></span></button>
+        </section>
+        <section id="notes-container"></section>
+    </main>
+    </div>
+    <div class="linha"></div>
+    <footer>
+        <p>2025 © Trabalho avaliativo para o curso Análise e Desenvolvimento de Sistemas da Universidade Veiga de Almeida</p>
+         <p>Desenvolvido por: Rhenan Silva (1250120393), Isabelli Mariana (1250111633) e Luiz Felipe Martins (1250124506)</p>
+    </footer>
+    <script src="notas.js"></script>
+</body>
+</html>
