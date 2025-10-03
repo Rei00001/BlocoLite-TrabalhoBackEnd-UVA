@@ -51,7 +51,7 @@ if (!registerForm) {
 
       if (response.ok) {
         showMessage('Registro realizado com sucesso! Agora você pode fazer o login.');
-        window.location.href = 'login.html';
+        window.location.href = '../login.html';
       } else {
         showMessage(data.error || 'Ocorreu um erro durante o registro.');
       }
