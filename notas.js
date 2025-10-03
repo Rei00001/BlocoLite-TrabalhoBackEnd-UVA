@@ -77,8 +77,8 @@ window.addEventListener('DOMContentLoaded', () => {
             <div class="note-footer">
                 <small>Última atualização: ${formattedDate}</small>
                 <div class="note-actions">
-                    <button class="edit-btn primary button">Editar <span class="button-icon"><img src="/img/edit.png" alt="edit"></span></button>
-                    <button class="delete-btn secondary button">Excluir <span class="button-icon"><img src="/img/lixeira.png" alt="delete"></span></button>
+                    <button class="edit-btn primary button">Editar <span class="button-icon"><img src="img/edit.png" alt="edit"></span></button>
+                    <button class="delete-btn secondary button">Excluir <span class="button-icon"><img src="img/lixeira.png" alt="delete"></span></button>
                 </div>
             </div>
         `;
@@ -182,15 +182,12 @@ window.addEventListener('DOMContentLoaded', () => {
         currentEditingNoteId = note.id;
         
         // Muda o texto do botão para indicar que estamos atualizando
-        saveButton.innerHTML = 'Atualizar Nota <span class="button-icon"><img src="/img/ok.png" alt="ok"></span>';
+        saveButton.innerHTML = 'Atualizar Nota <span class="button-icon"><img src="img/ok.png" alt="ok"></span>';
 
         // Rola a tela para o topo para facilitar a edição
         window.scrollTo(0, 0);
     }
 
-    /**
-     * Faz o logout do usuário.
-     */
     function handleLogout() {
         localStorage.removeItem('currentUser'); // Remove o usuário do localStorage
         window.location.href = 'login.html'; // Redireciona para o login
