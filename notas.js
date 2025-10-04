@@ -1,10 +1,12 @@
+const e = require("express");
+
 const BASE_URL ='https://blocolite-trabalhobackend-uva.onrender.com';
 
 window.addEventListener('DOMContentLoaded', () => {
 
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-    if (!currentUser) {
+    if (!currentUser || !currentUser.userId) {
         window.location.href = 'login.html';
         return;
     }
@@ -154,7 +156,8 @@ window.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
     }
 
-    function handleLogout() {
+    function handleLogout(event) {
+        event.preventDefault();
         localStorage.removeItem('currentUser'); 
         window.location.href = 'login.html'; 
     }
