@@ -1,5 +1,3 @@
-const e = require("express");
-
 const BASE_URL ='https://blocolite-trabalhobackend-uva.onrender.com';
 
 window.addEventListener('DOMContentLoaded', () => {
