@@ -15,8 +15,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.options('*', cors(corsOptions)); 
-
 app.use(express.json());
 
 const db = new sqlite3.Database('./database.db', (err) => {
