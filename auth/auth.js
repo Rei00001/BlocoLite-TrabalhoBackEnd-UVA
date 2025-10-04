@@ -1,6 +1,4 @@
-const BASE_URL = window.location.hostname === 'localhost'
-  ? 'http://localhost:3000'
-  : 'https://blocolite-trabalhobackend-uva.onrender.com';
+const BASE_URL ='https://blocolite-trabalhobackend-uva.onrender.com';
 
 const registerForm = document.getElementById('register-form');
 
