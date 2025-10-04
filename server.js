@@ -6,7 +6,7 @@ const saltRounds = 10;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 
